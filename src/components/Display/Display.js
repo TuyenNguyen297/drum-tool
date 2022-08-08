@@ -59,7 +59,7 @@ export default function Display() {
   }, [power, volume, category, pad, formatDisplayedData]);
 
   return (
-    <div className={style.div}>
+    <div id="display" className={style.div}>
       <p>{state}</p>
     </div>
   );

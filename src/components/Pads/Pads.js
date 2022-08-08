@@ -84,18 +84,18 @@ export default function Pads() {
       {padList.split("").map((pad, index) => (
         <button
           key={index}
-          id={`${style[power ? "power-on" : "power-off"]}`}
-          className={"drum-pad"}
+          // id={`${style[power ? "power-on" : "power-off"]}`}
+          // ${style[power ? "power-on" : "power-off"]}
+          id={category[pad].title.replace(/\s/g, "-")}
+          className={"drum-pad ".concat(`${style[power ? "power-on" : "power-off"]}`)}
           onClick={handleClick}
-          ref={(ref) => (padRef.current[pad] = ref)}
-        >
-          {pad}
-
+          ref={(ref) => (padRef.current[pad] = ref)}>{pad}
           <audio
             id={pad}
+            className="clip"
             ref={(ref) => (audioSource.current[waitFor(ref)] = ref)}
-          >
-            <source src={category[pad].src} type="audio/mpeg"></source>
+            src={category[pad].src} >
+            {/* type="audio/mpeg" */}
           </audio>
         </button>
       ))}
