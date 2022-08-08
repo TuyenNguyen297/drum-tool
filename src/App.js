@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./index.scss";
+import style from "./App.module.scss";
+import Pads from "./components/Pads/Pads.js";
+import Power from "./components/Power/Power.js";
+import Display from "./components/Display/Display.js";
+import Slider from "./components/Slider/Slider.js";
+import Bank from "./components/Bank/Bank.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section id="drum-machine" className={style.App}>
+      <div id="pads-area">
+        <Pads />
+      </div>
+      <div id="control-area">
+        <Power />
+        <Display />
+        <Slider />
+        <Bank />
+      </div>
+    </section>
   );
 }
 

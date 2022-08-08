@@ -1,0 +1,125 @@
+@import "./partials/variables.scss";
+@import "./partials/mixin.scss";
+
+.App {
+  display: flex;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.596);
+  margin: auto 3rem;
+  min-width: 380px;
+  @include screen(PC);
+  padding: 4rem 6rem;
+  column-gap: 5rem;
+
+  [id="pads-area"] {
+    width: 60%;
+  }
+
+  [id="control-area"] {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 1280px) {
+  .App {
+    flex-direction: column;
+    row-gap: 4rem;
+    @include screen(TL);
+    padding: 2rem 2rem;
+
+    [id="pads-area"] {
+      width: 100%;
+      height: 50%;
+    }
+
+    [id="control-area"] {
+      width: 100%;
+      height: 50%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    @include screen(SP);
+    row-gap: 2.5rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+[id="control-area"]>div {
+  @include control-elements-size;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+
+  [class="title"] {
+    box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.596), 0px 1px 2px rgba(black, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    height: 4rem;
+    line-height: 2;
+    padding-left: 5px;
+    border-radius: 3px 0px 0px 3px;
+  }
+}
+
+
+[class="title"] {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(67, 62, 62, 0.878);
+}
+
+[class="switch"] {
+  display: block;
+  height: 4rem;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0px 3px 3px 0px;
+  box-shadow: 0px -1px 2px rgba(255, 255, 255, 0.596), 1px 1px 2px rgba(black, 0.3);
+
+  [class="checkbox"] {
+    width: 90px;
+    visibility: hidden;
+    position: absolute;
+
+    &:checked+span::before {
+      background-color: greenyellow;
+      transform: translateX(100%);
+    }
+  }
+
+  [class="slider"] {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 2px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+
+    &::before {
+      content: '';
+      line-height: 2.5;
+      font-weight: 600;
+      width: 50%;
+      height: 90%;
+      background-color: rgb(198, 33, 68);
+      transition: transform 0.5s;
+      border-radius: 2px;
+    }
+  }
+}

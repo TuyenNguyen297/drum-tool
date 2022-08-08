@@ -1,0 +1,22 @@
+@use "sass:math";
+@use "sass:list";
+
+@function width($screen) {
+  @if $screen ==PC {
+    @return 1000px;
+  } @else if $screen ==TL {
+    @return 430px;
+  } @else if $screen ==SP {
+    @return 350px;
+  }
+}
+
+@function height($screen) {
+  @if $screen ==PC {
+    @return 400px;
+  } @else if $screen ==TL {
+    @return 750px;
+  } @else if $screen ==SP {
+    @return 700px;
+  }
+}

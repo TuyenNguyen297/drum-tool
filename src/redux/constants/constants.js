@@ -1,0 +1,6 @@
+export const actions = {
+  TOGGLE_POWER: "TOGGLE_POWER",
+  TOGGLE_BANK: "TOGGLE_BANK",
+  ADJUST_VOLUME: "ADJUST_VOLUME",
+  CLICK_PAD: "CLICK_PAD",
+};
